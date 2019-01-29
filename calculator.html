@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR - Jollo Erbito</title>
+</head>
+<body align="center">
+
+	<h1>CALCULATOR - Jollo Erbito</h1>
+
+	<input type="number" placeHolder="0" id="display">
+
+<br>
+<br>
+ 
+	<button type="button" id="num" onclick="inputNum(this)">7</button>
+	<button type="button" id="num" onclick="inputNum(this)">8</button>
+	<button type="button" id="num" onclick="inputNum(this)">9</button>
+	<button type="button" id="divide" onclick="divide()">/</button>
+
+<br>
+<br>
+	<button type="button" id="num" onclick="inputNum(this)">4</button>
+	<button type="button" id="num" onclick="inputNum(this)">5</button>
+	<button type="button" id="num" onclick="inputNum(this)">6</button>
+	<button type="button" id="multiply" onclick="multiply()">*</button>
+
+<br>
+<br>
+
+	<button type="button" id="num" onclick="inputNum(this)">1</button>
+	<button type="button" id="num" onclick="inputNum(this)">2</button>
+	<button type="button" id="num" onclick="inputNum(this)">3</button>
+	<button type="button" id="minus" onclick="subtract()">-</button>
+
+<br>
+<br>
+
+	<button type="button" id="clear" onclick="clr()">C</button>
+	<button type="button" id="num" onclick="inputNum(this)">0</button>
+	<button type="button" id="equals" onclick="equals()">=</button>
+	<button type="button" id="plus" onclick="add()">+</button>
+
+<br>
+<br>
+
+	<button type="button" id="mod" onclick="mod()">M O D</button>
+
+<script type="text/javascript">
+	
+	let n = document.getElementById('display');
+	let numberHolder = parseInt(n.value);
+	let optr;
+
+
+	function inputNum(e) {
+		n.value = e.innerHTML;
+	}
+
+	function add() {
+		optr = "+";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+
+	function subtract() {
+		optr = "-";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+
+	function multiply(){
+		optr = "*";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+
+	function divide() {
+		optr = "/";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+
+	function mod() {
+		optr = "%";
+		numberHolder = parseInt(n.value);
+		n.value = "";
+	}
+
+	function equals() {
+
+		switch(optr) {
+			case "+":
+			n.value = numberHolder + parseInt(n.value);
+			break;
+
+			case "-":
+			n.value = numberHolder - parseInt(n.value);
+			break;
+
+			case "*":
+			n.value = numberHolder * parseInt(n.value);
+			break;
+
+			case "/":
+			n.value = numberHolder / parseInt(n.value);
+			break;
+
+			case "%":
+			n.value = numberHolder % parseInt(n.value);
+			break;
+		}
+	}
+
+	function clr() {
+		n.value = "";
+	}
+
+
+</script>
+</body>
+</html>
